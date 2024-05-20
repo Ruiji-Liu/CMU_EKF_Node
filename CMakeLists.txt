@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(CMU_EKF_Node)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++17)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   pcl_conversions
   pcl_ros
-  CMU_UNet_Node
+  dummy_vision
 )
 
 ## System dependencies are found with CMake's conventions
@@ -74,7 +74,7 @@ add_message_files(
 generate_messages(
   DEPENDENCIES
   std_msgs  # Or other packages containing msgs
-  CMU_UNet_Node
+  dummy_vision
 )
 
 ################################################
@@ -109,7 +109,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES CMU_EKF_Node
-  CATKIN_DEPENDS roscpp message_runtime CMU_UNet_Node
+  CATKIN_DEPENDS roscpp message_runtime dummy_vision
 #  DEPENDS system_lib
 )
 
